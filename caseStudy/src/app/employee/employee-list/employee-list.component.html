@@ -1,0 +1,55 @@
+<app-navbar></app-navbar>
+<h1 class="text-center">Danh sách nhân viên</h1>
+<table>
+  <tr>
+    <td>
+      <button style=" margin-left: 55px" class="bg-danger">
+        <a routerLink='/employee/create' class="text-dark" >create employee</a>
+      </button>
+    </td>
+    <td>
+      <div class="form-group col-md-4" style="margin-left: 860px">
+        <input type="text"  placeholder="input search" [(ngModel)]="keyWord" (change)="search()">
+      </div>
+    </td>
+  </tr>
+</table>
+<br>
+<table class="container table table-bordered table-striped bg-info">
+  <tr class="text-center">
+    <td>STT</td>
+    <td>code</td>
+    <td>name</td>
+    <td>position</td>
+    <td>education degree</td>
+    <td>division</td>
+    <td>birthday</td>
+    <td>idCard</td>
+    <td>salary</td>
+    <td>phone</td>
+    <td>email</td>
+    <td>address</td>
+    <td>Edit</td>
+    <td>Delete</td>
+  </tr>
+  <tr *ngFor="let employee of employees | paginate: {itemsPerPage: 2, currentPage: p} ; index as i" class="text-center">
+    <td>{{p*2+i-1}}</td>
+    <td>{{employee.code}}</td>
+    <td><a  (click)="onDetailHandler(employee)">{{employee.name}}</a></td>
+    <td>{{employee.position.name}}</td>
+    <td>{{employee.educationDegree.name}}</td>
+    <td>{{employee.division.name}}</td>
+    <td>{{employee.birthday}}</td>
+    <td>{{employee.idCard}}</td>
+    <td>{{employee.salary}}</td>
+    <td>{{employee.phone}}</td>
+    <td>{{employee.email}}</td>
+    <td>{{employee.address}}</td>
+    <td><a [routerLink]="['/employee/edit',employee.id]">Edit</a></td>
+    <td><a  (click)="onDeleteHandler(employee.id)">Delete</a></td>
+  </tr>
+</table>
+<pagination-controls (pageChange)="p = $event" class="text-center"></pagination-controls>
+
+<app-foorter></app-foorter>
+

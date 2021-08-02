@@ -1,0 +1,58 @@
+<app-navbar></app-navbar>
+<h1 class="text-center">Danh sách khách hàng</h1>
+<table>
+  <tr>
+    <td>
+      <button style=" margin-left: 55px" class="bg-danger">
+        <a routerLink='/customer/create' class="text-dark" >create customer</a>
+      </button>
+    </td>
+    <td>
+      <div style="margin-left: 200px">
+<!--        <input type="date"  placeholder="name search" [(ngModel)]="birthday">-->
+<!--        <input type="date"  placeholder="name search" [(ngModel)]="birthday2">-->
+        <select [(ngModel)]="keyWord2" style="width: 170px;">
+          <option [ngValue]="">--bấm chọn---</option>
+          <option *ngFor="let ct of customerTypes" [ngValue]="ct.name">{{ct.name}}</option>
+        </select>
+        <input type="text"  placeholder="name search" [(ngModel)]="keyWord">
+<!--        <input type="text"  placeholder="customer search" [(ngModel)]="keyWord2">-->
+
+        <button (click)="search()">search</button>
+      </div>
+
+    </td>
+  </tr>
+</table>
+<br>
+<table class="container table table-bordered table-striped bg-info">
+  <tr class="text-center">
+    <td>STT</td>
+    <td>Code</td>
+    <td>customerType</td>
+    <td>name</td>
+    <td>birthday</td>
+    <td>idCard</td>
+    <td>phone</td>
+    <td>email</td>
+    <td>address</td>
+    <td>Edit</td>
+    <td>Delete</td>
+  </tr>
+  <tr *ngFor="let customer of customers | paginate: {itemsPerPage: 2, currentPage: p} ; index as i" class="text-center">
+    <td>{{p*2+i-1}}</td>
+    <td>{{customer.code}}</td>
+    <td>{{customer.customerType.name}}</td>
+    <td><a  (click)="onDetailHandler(customer)">{{customer.name}}</a></td>
+    <td>{{customer.birthday}}</td>
+    <td>{{customer.idCard}}</td>
+    <td>{{customer.phone}}</td>
+    <td>{{customer.email}}</td>
+    <td>{{customer.address}}</td>
+    <td><a [routerLink]="['/customer/edit',customer.id]">Edit</a></td>
+    <td><a  (click)="onDeleteHandler(customer.id)">Delete</a></td>
+  </tr>
+</table>
+<pagination-controls (pageChange)="p = $event" class="text-center"></pagination-controls>
+
+<app-foorter></app-foorter>

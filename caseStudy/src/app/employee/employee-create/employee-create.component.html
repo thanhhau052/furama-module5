@@ -1,0 +1,158 @@
+<h1>create employee</h1>
+<button><a routerLink="/employee/list">back to list</a></button>
+<form [formGroup]="createForm" (ngSubmit)="submit()">
+  <table>
+    <tr>
+      <td>code:</td>
+      <td><input type="text" formControlName="code"></td>
+      <td>
+        <div *ngIf="!createForm.get('code').valid && (createForm.get('code').dirty ||createForm.get('code').touched)">
+          <div [hidden]="!createForm.get('code').errors.required">
+            <span>vui lòng số phone</span>
+          </div>
+          <div [hidden]="!createForm.get('code').errors.pattern">
+            <span>nhập sai vui lòng nhập  đúng NV-XXXX</span>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>name:</td>
+      <td><input type="text" formControlName="name"></td>
+      <td>
+        <div *ngIf="!createForm.get('name').valid && (createForm.get('name').dirty ||createForm.get('name').touched)">
+          <div [hidden]="!createForm.get('name').errors.required">
+            <span>vui lòng nhập vào!!!</span>
+          </div>
+          <div [hidden]="!createForm.get('name').errors.pattern">
+            <span>nhập sai vui lòng nhập lại!!!</span>
+          </div>
+        </div>
+      </td>
+    </tr>
+
+    <td>position:</td>
+    <td>
+      <select formControlName="position" class="form-control">
+        <option *ngFor="let p of positions" [ngValue]="p">{{p.name}}</option>
+      </select>
+    </td>
+    <td>
+      <div *ngIf="!createForm.get('position').valid && (createForm.get('position').dirty ||createForm.get('position').touched)">
+        <div [hidden]="!createForm.get('position').errors.required">
+          <span>vui lòng chọn position!!!</span>
+        </div>
+      </div>
+    </td>
+    <tr>
+      <td>education Degree:</td>
+      <td>
+        <select formControlName="educationDegree" class="form-control">
+          <option *ngFor="let e of educationDegrees" [ngValue]="e">{{e.name}}</option>
+        </select>
+      </td>
+      <td>
+        <div *ngIf="!createForm.get('educationDegree').valid && (createForm.get('educationDegree').dirty ||createForm.get('educationDegree').touched)">
+          <div [hidden]="!createForm.get('educationDegree').errors.required">
+            <span>vui lòng chọn educationDegree!!!</span>
+          </div>
+        </div>
+      </td>
+    <tr>
+    <tr>
+      <td>division:</td>
+      <td>
+        <select formControlName="division" class="form-control">
+          <option *ngFor="let d of divisions" [ngValue]="d">{{d.name}}</option>
+        </select>
+      </td>
+    <td>
+      <div *ngIf="!createForm.get('division').valid && (createForm.get('division').dirty ||createForm.get('division').touched)">
+        <div [hidden]="!createForm.get('division').errors.required">
+          <span>vui lòng chọn division!!!</span>
+        </div>
+      </div>
+    </td>
+  </tr>
+    <tr>
+      <td>birthday</td>
+      <td><input type="date" formControlName="birthday"></td>
+      <td>
+        <div *ngIf="!createForm.get('birthday').valid && (createForm.get('birthday').dirty ||createForm.get('birthday').touched)">
+          <div [hidden]="!createForm.get('birthday').errors.required">
+            <span>vui lòng vào!!!</span>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>idCard</td>
+      <td><input type="text" formControlName="idCard"></td>
+      <td>
+        <div *ngIf="!createForm.get('idCard').valid && (createForm.get('idCard').dirty ||createForm.get('idCard').touched)">
+          <div [hidden]="!createForm.get('idCard').errors.required">
+            <span>vui lòng idCard</span>
+          </div>
+          <div [hidden]="!createForm.get('idCard').errors.pattern">
+            <span>nhập sai vui lòng nhập lại</span>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>salary</td>
+      <td><input type="number" formControlName="salary"></td>
+      <td>
+        <div *ngIf="!createForm.get('salary').valid && (createForm.get('salary').dirty ||createForm.get('salary').touched)">
+          <div [hidden]="!createForm.get('salary').errors.required">
+            <span>vui lòng vào!!!</span>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>phone</td>
+      <td><input type="text" formControlName="phone"></td>
+      <td>
+        <div *ngIf="!createForm.get('phone').valid && (createForm.get('phone').dirty ||createForm.get('phone').touched)">
+          <div [hidden]="!createForm.get('phone').errors.required">
+            <span>vui lòng vào!!!</span>
+          </div>
+          <div [hidden]="!createForm.get('code').errors.pattern">
+            <span>nhập sai vui lòng nhập lai</span>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>email</td>
+      <td><input type="email" formControlName="email"></td>
+      <td>
+        <div *ngIf="!createForm.get('email').valid && (createForm.get('email').dirty ||createForm.get('email').touched)">
+          <div [hidden]="!createForm.get('email').errors.required">
+            <span>vui lòng vào!!</span>
+          </div>
+          <div [hidden]="!createForm.get('email').errors.email">
+            <span>nhập sai vui lòng nhập lại</span>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>address</td>
+      <td><input type="text" formControlName="address"></td>
+      <td>
+        <div *ngIf="!createForm.get('address').valid && (createForm.get('address').dirty ||createForm.get('address').touched)">
+          <div [hidden]="!createForm.get('address').errors.required">
+            <span>vui lòng nhập!!!</span>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><button [disabled]="createForm.valid">create</button></td>
+    </tr>
+  </table>
+</form>
+

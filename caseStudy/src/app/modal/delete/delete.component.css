@@ -1,0 +1,13 @@
+button{
+  width: 60px;
+  height: 30px;
+  text-align: center;
+}
+#cancel{
+  margin-left: 70px;
+  background: aqua;
+}
+#delete{
+  background: red;
+  margin: 5px;
+}

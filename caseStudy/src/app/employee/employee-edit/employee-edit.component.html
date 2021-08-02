@@ -1,0 +1,159 @@
+<h1>create employee</h1>
+<button><a routerLink="/customer/list">back to list</a></button>
+<form [formGroup]="editForm" (ngSubmit)="update(id)">
+  <input type="hidden" formControlName="id">
+  <table>
+    <tr>
+      <td>code:</td>
+      <td><input type="text" formControlName="code"></td>
+      <td>
+        <div *ngIf="!editForm.get('code').valid && (editForm.get('code').dirty ||editForm.get('code').touched)">
+          <div [hidden]="!editForm.get('code').errors.required">
+            <span>vui lòng số phone</span>
+          </div>
+          <div [hidden]="!editForm.get('code').errors.pattern">
+            <span>nhập sai vui lòng nhập  đúng NV-XXXX</span>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>name:</td>
+      <td><input type="text" formControlName="name"></td>
+      <td>
+        <div *ngIf="!editForm.get('name').valid && (editForm.get('name').dirty ||editForm.get('name').touched)">
+          <div [hidden]="!editForm.get('name').errors.required">
+            <span>vui lòng nhập vào!!!</span>
+          </div>
+          <div [hidden]="!editForm.get('name').errors.pattern">
+            <span>nhập sai vui lòng nhập lại!!!</span>
+          </div>
+        </div>
+      </td>
+    </tr>
+
+    <td>position:</td>
+    <td>
+      <select formControlName="position" class="form-control" [compareWith]="compareFn">
+        <option *ngFor="let p of positions" [ngValue]="p" selected>{{p.name}}</option>
+      </select>
+    </td>
+    <td>
+      <div *ngIf="!editForm.get('position').valid && (editForm.get('position').dirty ||editForm.get('position').touched)">
+        <div [hidden]="!editForm.get('position').errors.required">
+          <span>vui lòng chọn position!!!</span>
+        </div>
+      </div>
+    </td>
+    <tr>
+      <td>education Degree:</td>
+      <td>
+        <select formControlName="educationDegree" class="form-control" [compareWith]="compareFn">
+          <option *ngFor="let e of educationDegrees" [ngValue]="e" selected>{{e.name}}</option>
+        </select>
+      </td>
+      <td>
+        <div *ngIf="!editForm.get('educationDegree').valid && (editForm.get('educationDegree').dirty ||editForm.get('educationDegree').touched)">
+          <div [hidden]="!editForm.get('educationDegree').errors.required">
+            <span>vui lòng chọn educationDegree!!!</span>
+          </div>
+        </div>
+      </td>
+    <tr>
+    <tr>
+      <td>division:</td>
+      <td>
+        <select formControlName="division" class="form-control" [compareWith]="compareFn">
+          <option *ngFor="let d of divisions" [ngValue]="d" selected>{{d.name}}</option>
+        </select>
+      </td>
+      <td>
+        <div *ngIf="!editForm.get('division').valid && (editForm.get('division').dirty ||editForm.get('division').touched)">
+          <div [hidden]="!editForm.get('division').errors.required">
+            <span>vui lòng chọn division!!!</span>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>birthday</td>
+      <td><input type="date" formControlName="birthday"></td>
+      <td>
+        <div *ngIf="!editForm.get('birthday').valid && (editForm.get('birthday').dirty ||editForm.get('birthday').touched)">
+          <div [hidden]="!editForm.get('birthday').errors.required">
+            <span>vui lòng vào!!!</span>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>idCard</td>
+      <td><input type="text" formControlName="idCard"></td>
+      <td>
+        <div *ngIf="!editForm.get('idCard').valid && (editForm.get('idCard').dirty ||editForm.get('idCard').touched)">
+          <div [hidden]="!editForm.get('idCard').errors.required">
+            <span>vui lòng idCard</span>
+          </div>
+          <div [hidden]="!editForm.get('idCard').errors.pattern">
+            <span>nhập sai vui lòng nhập lại</span>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>salary</td>
+      <td><input type="number" formControlName="salary"></td>
+      <td>
+        <div *ngIf="!editForm.get('salary').valid && (editForm.get('salary').dirty ||editForm.get('salary').touched)">
+          <div [hidden]="!editForm.get('salary').errors.required">
+            <span>vui lòng vào!!!</span>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>phone</td>
+      <td><input type="text" formControlName="phone"></td>
+      <td>
+        <div *ngIf="!editForm.get('phone').valid && (editForm.get('phone').dirty ||editForm.get('phone').touched)">
+          <div [hidden]="!editForm.get('phone').errors.required">
+            <span>vui lòng vào!!!</span>
+          </div>
+          <div [hidden]="!editForm.get('code').errors.pattern">
+            <span>nhập sai vui lòng nhập lai</span>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>email</td>
+      <td><input type="email" formControlName="email"></td>
+      <td>
+        <div *ngIf="!editForm.get('email').valid && (editForm.get('email').dirty ||editForm.get('email').touched)">
+          <div [hidden]="!editForm.get('email').errors.required">
+            <span>vui lòng vào!!</span>
+          </div>
+          <div [hidden]="!editForm.get('email').errors.email">
+            <span>nhập sai vui lòng nhập lại</span>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>address</td>
+      <td><input type="text" formControlName="address"></td>
+      <td>
+        <div *ngIf="!editForm.get('address').valid && (editForm.get('address').dirty ||editForm.get('address').touched)">
+          <div [hidden]="!editForm.get('address').errors.required">
+            <span>vui lòng nhập!!!</span>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><button [disabled]="editForm.valid">update</button></td>
+    </tr>
+  </table>
+</form>
+

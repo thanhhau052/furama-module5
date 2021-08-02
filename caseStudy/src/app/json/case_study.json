@@ -1,0 +1,233 @@
+{
+  "customerType": [
+    {
+      "id": 1,
+      "name": "Diamond"
+    },
+    {
+      "id": 2,
+      "name": "Platinium"
+    },
+    {
+      "id": 3,
+      "name": "Gold"
+    },
+    {
+      "id": 4,
+      "name": "Silver"
+    },
+    {
+      "id": 5,
+      "name": "Member"
+    }
+  ],
+  "customer": [
+    {
+      "id": 1,
+      "code": "KH-0001",
+      "customerType": {
+        "id": 2,
+        "name": "Platinium"
+      },
+      "name": "Nga Hoàng",
+      "birthday": "2021-07-06",
+      "idCard": "134567281",
+      "phone": "0912345678",
+      "email": "linh12@gmail.com",
+      "address": "Hà Nội"
+    },
+    {
+      "id": 2,
+      "code": "KH-0002",
+      "customerType": {
+        "id": 1,
+        "name": "Diamond"
+      },
+      "name": "oto",
+      "birthday": "2021-07-21",
+      "idCard": "198765728",
+      "phone": "0902123456",
+      "email": "minhquan12@gmail.com",
+      "address": "quang binh"
+    },
+    {
+      "id": 3,
+      "code": "KH-0003",
+      "customerType": {
+        "id": 2,
+        "name": "Platinium"
+      },
+      "name": "Nga",
+      "birthday": "2021-07-06",
+      "idCard": "13456728",
+      "phone": "0912345678",
+      "email": "nga1212@gmail.com",
+      "address": "Đà Nẳng"
+    },
+    {
+      "id": 4,
+      "code": "KH-0004",
+      "customerType": {
+        "id": 3,
+        "name": "Gold"
+      },
+      "name": "otoo",
+      "birthday": "2021-07-08",
+      "idCard": "123456789",
+      "phone": "0912345678",
+      "email": "linh12@gmail.com",
+      "address": "Hà Nội"
+    },
+    {
+      "id": 5,
+      "code": "KH-1323",
+      "customerType": {
+        "id": 2,
+        "name": "Platinium"
+      },
+      "name": "Diệu Thúy",
+      "birthday": "2021-07-27",
+      "idCard": "121221221",
+      "phone": "0902121211",
+      "email": "thanh@gmail.com",
+      "address": "Ha Noi"
+    }
+  ],
+  "position": [
+    {
+      "id": 1,
+      "name": "bảo vệ"
+    },
+    {
+      "id": 2,
+      "name": "phục vụ"
+    },
+    {
+      "id": 3,
+      "name": "lễ tân"
+    },
+    {
+      "id": 4,
+      "name": "quản lý"
+    },
+    {
+      "id": 5,
+      "name": "giám đốc"
+    }
+  ],
+  "division": [
+    {
+      "id": 1,
+      "name": "bảo an"
+    },
+    {
+      "id": 2,
+      "name": "nhân sự"
+    },
+    {
+      "id": 3,
+      "name": "hành chính"
+    },
+    {
+      "id": 4,
+      "name": "quản lý"
+    },
+    {
+      "id": 5,
+      "name": "giám đốc"
+    }
+  ],
+  "educationDegree": [
+    {
+      "id": 1,
+      "name": "lao động phổ thông"
+    },
+    {
+      "id": 2,
+      "name": "trung cấp"
+    },
+    {
+      "id": 3,
+      "name": "cao đẳng"
+    },
+    {
+      "id": 4,
+      "name": "đại học"
+    },
+    {
+      "id": 5,
+      "name": "sau đại học"
+    }
+  ],
+  "employee": [
+    {
+      "id": 1,
+      "code": "NV-0001",
+      "name": "Thúy",
+      "position": {
+        "id": 3,
+        "name": "lễ tân"
+      },
+      "educationDegree": {
+        "id": 4,
+        "name": "đại học"
+      },
+      "division": {
+        "id": 2,
+        "name": "nhân sự"
+      },
+      "birthday": "1997-02-24",
+      "idCard": "123456789",
+      "salary": "6000000",
+      "phone": "0987654567",
+      "email": "trung026@gmail.com",
+      "address": "Quảng Bình"
+    },
+    {
+      "id": 2,
+      "code": "NV-0002",
+      "name": "linh",
+      "position": {
+        "id": 1,
+        "name": "bảo vệ"
+      },
+      "educationDegree": {
+        "id": 1,
+        "name": "lao động phổ thông"
+      },
+      "division": {
+        "id": 1,
+        "name": "bảo an"
+      },
+      "birthday": "1999-12-12",
+      "idCard": "123456789",
+      "salary": "6000000",
+      "phone": "0987654567",
+      "email": "dat1@gmail.com",
+      "address": "huế"
+    },
+    {
+      "id": 3,
+      "code": "NV-0003",
+      "name": "Trang",
+      "position": {
+        "id": 3,
+        "name": "lễ tân"
+      },
+      "educationDegree": {
+        "id": 4,
+        "name": "đại học"
+      },
+      "division": {
+        "id": 2,
+        "name": "nhân sự"
+      },
+      "birthday": "1997-02-24",
+      "idCard": "123456789",
+      "salary": "6000000",
+      "phone": "0987654567",
+      "email": "trung026@gmail.com",
+      "address": "đà nẳng"
+    }
+  ]
+}

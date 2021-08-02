@@ -1,0 +1,130 @@
+<h1>Tạo sản phẩm mới</h1>
+<button><a routerLink="/customer/list">back to list</a></button>
+<form [formGroup]="createForm" (ngSubmit)="submit()">
+  <table>
+    <tr>
+      <td>code:</td>
+      <td><input type="text" formControlName="code"></td>
+      <td>
+        <div *ngIf="!createForm.get('code').valid && (createForm.get('code').dirty ||createForm.get('code').touched)">
+          <div [hidden]="!createForm.get('code').errors.required">
+            <span>vui lòng vào!!!</span>
+          </div>
+          <div [hidden]="!createForm.get('code').errors.pattern">
+            <span>nhập sai vui lòng nhập  đúng KH-XXXX</span>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>customerType:</td>
+      <td>
+        <select formControlName="customerType" class="form-control">
+          <option *ngFor="let c of customerTypes" [ngValue]="c">{{c.name}}</option>
+        </select>
+      </td>
+      <td>
+        <div
+          *ngIf="!createForm.get('customerType').valid && (createForm.get('customerType').dirty ||createForm.get('customerType').touched)">
+          <div [hidden]="!createForm.get('customerType').errors.required">
+            <span>vui lòng chọn customerType</span>
+          </div>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td>name:</td>
+      <td><input type="text" formControlName="name"></td>
+      <td>
+        <div *ngIf="!createForm.get('name').valid && (createForm.get('name').dirty ||createForm.get('name').touched)">
+          <div [hidden]="!createForm.get('name').errors.required">
+            <span>vui lòng nhập tên</span>
+          </div>
+          <div [hidden]="!createForm.get('name').errors.pattern">
+            <span>nhập sai vui lòng nhập lại</span>
+          </div>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td>birthday</td>
+      <td><input type="date" formControlName="birthday"></td>
+      <td>
+        <div
+          *ngIf="!createForm.get('birthday').valid && (createForm.get('birthday').dirty ||createForm.get('birthday').touched)">
+          <div [hidden]="!createForm.get('birthday').errors.required">
+            <span>vui lòng ngày sinh của bạn</span>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>idCard</td>
+      <td><input type="text" formControlName="idCard"></td>
+      <td>
+        <div
+          *ngIf="!createForm.get('idCard').valid && (createForm.get('idCard').dirty ||createForm.get('idCard').touched)">
+          <div [hidden]="!createForm.get('idCard').errors.required">
+            <span>vui lòng số cm</span>
+          </div>
+          <div [hidden]="!createForm.get('idCard').errors.pattern">
+            <span>nhập sai vui lòng nhập lại</span>
+          </div>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td>phone</td>
+      <td><input type="text" formControlName="phone"></td>
+      <td>
+        <div
+          *ngIf="!createForm.get('phone').valid && (createForm.get('phone').dirty ||createForm.get('phone').touched)">
+          <div [hidden]="!createForm.get('phone').errors.required">
+            <span>vui lòng số phone</span>
+          </div>
+          <div [hidden]="!createForm.get('phone').errors.pattern">
+            <span>nhập sai vui lòng nhập lại</span>
+          </div>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td>email</td>
+      <td><input type="email" formControlName="email"></td>
+      <td>
+        <div
+          *ngIf="!createForm.get('email').valid && (createForm.get('email').dirty ||createForm.get('email').touched)">
+          <div [hidden]="!createForm.get('email').errors.required">
+            <span>vui lòng email</span>
+          </div>
+          <div [hidden]="!createForm.get('email').errors.email">
+            <span>nhập sai vui lòng nhập lại</span>
+          </div>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td>address</td>
+      <td><input type="text" formControlName="address"></td>
+      <td>
+        <div
+          *ngIf="!createForm.get('address').valid && (createForm.get('address').dirty ||createForm.get('address').touched)">
+          <div [hidden]="!createForm.get('email').errors.required">
+            <span>vui lòng vào</span>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        <button [disabled]="!createForm.valid">create</button>
+      </td>
+    </tr>
+  </table>
+</form>
